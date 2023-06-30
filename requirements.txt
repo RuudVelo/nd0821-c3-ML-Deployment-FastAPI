@@ -11,4 +11,4 @@ requests
 jupyter 
 jupyterlab
 dvc
-dvc[s3]
+dvc-s3
