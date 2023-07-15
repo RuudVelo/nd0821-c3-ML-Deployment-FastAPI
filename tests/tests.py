@@ -9,8 +9,8 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 
-from modelling.model import inference, compute_model_metrics
-from modelling.data import process_data
+from model.model import inference, compute_model_metrics
+from model.data import process_data
 
 """
 Define fixtures
