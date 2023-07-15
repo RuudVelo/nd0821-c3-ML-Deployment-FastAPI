@@ -6,7 +6,6 @@ import multiprocessing
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import GradientBoostingClassifier
 
 logging.basicConfig(filename='training_logs.log',
                     level=logging.INFO,
