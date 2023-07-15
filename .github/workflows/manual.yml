@@ -46,5 +46,5 @@ jobs:
       #  run: |
       #    dvc pull 
       - name: Test with pytest
-        run: |
+        run: | 
           pytest tests/tests.py
