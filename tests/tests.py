@@ -21,7 +21,7 @@ def dataset():
     """
     Load CSV file and return it 
     """
-    path = "../data/census_clean.csv"
+    path = "./data/census_clean.csv"
     try:
         df = pd.read_csv(path)
     except FileNotFoundError as err:
@@ -41,7 +41,7 @@ def model_file():
     """
     Load model file and return it 
     """
-    model_path = "../model_artifacts/model.pkl"
+    model_path = "./model_artifacts/model.pkl"
     if os.path.isfile(model_path):
         try:
             model = joblib.load(model_path)
@@ -57,9 +57,9 @@ def model_file():
 @pytest.fixture(scope="module")
 def encoder_file():
     """
-    Load model file and return it 
+    Load encoder file and return it 
     """
-    encoder_path = "../model_artifacts/model.pkl"
+    encoder_path = "./model_artifacts/encoder.pkl"
     if os.path.isfile(encoder_path):
         try:
             encoder = joblib.load(encoder_path)
@@ -74,9 +74,9 @@ def encoder_file():
 @pytest.fixture(scope="module")
 def lb_file():
     """
-    Load model file and return it 
+    Load labelbinarizer file and return it 
     """
-    lb_path = "../model_artifacts/model.pkl"
+    lb_path = "./model_artifacts/lb.pkl"
     if os.path.isfile(lb_path):
         try:
             lb = joblib.load(lb_path)
