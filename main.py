@@ -41,30 +41,30 @@ class InputData(BaseModel):
 
 # Send data via POST to API
 @app.post("/inference/")
-async def predict(input: InputData):
-    input = np.array(
-        [
-            [
-                input.age,
-                input.workclass,
-                input.fnlgt,
-                input.education,
-                input.education_num,
-                input.marital_status,
-                input.occupation,
-                input.relationship,
-                input.race,
-                input.sex,
-                input.capital_gain,
-                input.capital_loss,
-                input.hours_per_week,
-                input.native_country,
-            ]
-        ]
-    )
-
+async def predict(inference: InputData):
+    #input = np.array(
+    #    [
+    #        [
+    #            input.age,
+    #            input.workclass,
+    #            input.fnlgt,
+    #            input.education,
+    #            input.education_num,
+    #            input.marital_status,
+    #            input.occupation,
+    #            input.relationship,
+    #            input.race,
+    #            input.sex,
+    #            input.capital_gain,
+    #            input.capital_loss,
+    #            input.hours_per_week,
+    #            input.native_country,
+    #        ]
+    #    ]
+    #)
+    dict_input = inference.dict(by_alias=True)
     # Create sample df for inference
-    sample_df = pd.DataFrame(input, index=[0])
+    sample_df = pd.DataFrame(dict_input, index=[0])
 
     # Generate the categorical features for transformation
     cat_features = [
@@ -84,7 +84,7 @@ async def predict(input: InputData):
     lb = joblib.load("model_artifacts/lb.pkl")
 
     X, _, _, _ = process_data(
-        sample_df,
+       sample_df,
         categorical_features=cat_features,
         training=False,
         encoder=encoder,
@@ -96,9 +96,9 @@ async def predict(input: InputData):
 
     # convert prediction and add to input inference dataset
     prediction = ">50k" if pred == 1 else "<=50k"
-    input["prediction"] = prediction
+    dict_input["prediction"] = prediction
 
-    return input
+    return dict_input
 
 
 if __name__ == "__main__":
