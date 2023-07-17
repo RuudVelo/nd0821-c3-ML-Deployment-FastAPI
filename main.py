@@ -18,7 +18,7 @@ app = FastAPI()
 # Welcome users
 @app.get("/")
 async def say_welcome():
-    return {"Welcome to this model API to predict salary of adults"}
+    return {"Welcome: This model API to predict salary of adults"}
 
 
 # Using of census_clean.csv namings
