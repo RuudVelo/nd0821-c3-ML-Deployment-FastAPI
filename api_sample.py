@@ -2,7 +2,7 @@ import requests
 import json
 
 # Heroku app url
-url = "https://ml-udacity-salary-app.herokuapp.com/inference/"
+url = "https://ml-udacity-salary-app-743b155e693f.herokuapp.com/inference/"
 
 # sample for prediction
 example =  {"age": 42,
