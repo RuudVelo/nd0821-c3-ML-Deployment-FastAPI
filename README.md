@@ -1,4 +1,36 @@
-Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
+# Deploying a Machine Learning Model on Heroku with FastAPI
+This repository contains the third project of the Udacity ML DevOps Engineer course. 
+
+* The link to Github is: https://github.com/RuudVelo/nd0821-c3-ML-Deployment-FastAPI
+
+* The Heroku app is not live (original url was "https://ml-udacity-salary-app.herokuapp.com/inference/"), because of costs. For screenshots of the app live see: https://github.com/RuudVelo/nd0821-c3-ML-Deployment-FastAPI/tree/master/screenshots
+
+# Project setup
+
+* A ML model was trained using the census data from the Census Income Dataset from UCI. Goal was to predict the salary of adults as either <=50k per year or >50k. For further information see the model_card.md
+* Inference of the model was facilitated with FastAPI and served by Heroku
+* Basic unit tests and API tests were set up (can be found in the tests folder)
+* CI/CD was setup using GitHub actions and connected with Heroku
+
+# Model training
+
+* The model can be trained with
+``` 
+python model/train_model.py
+```
+The model artifacts are stored in the model_artifacts folder
+
+Tests can be found in the tests folder in the tests.py file
+
+# API 
+
+* The app is setup using FastAPI. The code can be found in the root directory in the main.py file
+* For Heroku the Procfile, requirements.txt, python scripts and the saved model_artifacts are important
+* The api_sample.py file in the root folder can be used as an example inference dataset. It will post the sample dataset to the Heroku app and returns the status code, prediction of the model and some metadata of the defined example 
+
+# Instructions from Udacity for the project
+
+Working in a command line environment is recommended for ease of use with git. If on Windows, WSL1 or 2 is recommended.
 
 # Environment Set up
 * Download and install conda if you don’t have it already.
