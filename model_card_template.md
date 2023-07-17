@@ -21,4 +21,4 @@ These results represent the test set which was not used for training nor evaluat
 ## Ethical Considerations
 Data is open sourced on UCI machine learning repository for educational purposes, so don't use this for commercial settings or explanations. 
 ## Caveats and Recommendations
-Model quality can be improved a lot. That was however not the purpose of this project. Feature optimization and other model architectures will definitely lead to better results. When looking at results for slices (segments like sex and race), it can be seen some slices perform better than other.
+Model quality can be improved a lot. That was however not the purpose of this project. Feature optimization and other model architectures will definitely lead to better results. When looking at results for slices (segments like sex and race), it can be seen some slices perform better than other. The segment results can be found in the model/slice_output.txt file.
