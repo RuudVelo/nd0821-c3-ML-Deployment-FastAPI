@@ -26,7 +26,9 @@ Tests can be found in the tests folder in the tests.py file
 
 * The app is setup using FastAPI. The code can be found in the root directory in the main.py file
 * For Heroku the Procfile, requirements.txt, python scripts and the saved model_artifacts are important
-* The api_sample.py file in the root folder can be used as an example inference dataset. It will post the sample dataset to the Heroku app and returns the status code, prediction of the model and some metadata of the defined example 
+* The api_sample.py file in the root folder can be used as an example inference dataset. It will post the sample dataset to the Heroku app and returns the status code, prediction of the model (last value) and some metadata of the defined example 
+
+Note: DVC was in instructions, but not part of the Udacity project rubic. Since there were some setup issues DVC was not applied in the project. 
 
 # Instructions from Udacity for the project
 
