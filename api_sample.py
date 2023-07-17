@@ -20,13 +20,10 @@ example =  {"age": 42,
             "hours-per-week": 40,
             "native-country": "United-States"}
 
-#data = json.dumps(example)
-
 # POST to API and generate the response
 response = requests.post(url, json=example )
 
 # Show the response along with example metadata
 print("Response status code", response.status_code)
-#print("Predicted salary",response.json()['prediction'])
 print("response total:")
 print(response.json())

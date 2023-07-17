@@ -16,7 +16,6 @@ def test_root():
     assert r.json() == [
         "Welcome: This model API to predict salary of adults"]
 
-#38,Private,215646,HS-grad,9,Divorced,Handlers-cleaners,Not-in-family,White,Male,0,0,40,United-States,<=50K
 def test_predict_under():
     """ Test post to predict under 50K """
     r = client.post("/inference/", json={
@@ -38,7 +37,6 @@ def test_predict_under():
     assert r.status_code == 200
     assert r.json()['prediction'] == "<=50k"
 
-#42,Private,159449,Bachelors,13,Married-civ-spouse,Exec-managerial,Husband,White,Male,5178,0,40,United-States,>50K
 def test_predict_over():
     """ Test post to predict over 50K """
     r = client.post("/inference/", json={
