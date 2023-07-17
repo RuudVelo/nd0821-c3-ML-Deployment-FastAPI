@@ -42,26 +42,7 @@ class InputData(BaseModel):
 # Send data via POST to API
 @app.post("/inference/")
 async def predict(inference: InputData):
-    #input = np.array(
-    #    [
-    #        [
-    #            input.age,
-    #            input.workclass,
-    #            input.fnlgt,
-    #            input.education,
-    #            input.education_num,
-    #            input.marital_status,
-    #            input.occupation,
-    #            input.relationship,
-    #            input.race,
-    #            input.sex,
-    #            input.capital_gain,
-    #            input.capital_loss,
-    #            input.hours_per_week,
-    #            input.native_country,
-    #        ]
-    #    ]
-    #)
+
     dict_input = inference.dict(by_alias=True)
     # Create sample df for inference
     sample_df = pd.DataFrame(dict_input, index=[0])
