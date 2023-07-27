@@ -10,7 +10,7 @@ It can be used for illustration purposes, not for commercial use.
 ## Training Data
 Data coming from Census Income Dataset from UCI and can be found here: https://archive.ics.uci.edu/dataset/20/census+income
 ## Evaluation Data
-The dataset was split in training, validation and test data with a random_state of 101 to reproduce results. 
+The dataset was split in training, validation data with a random_state of 101 to reproduce results. The validation set compromised 20% of the total dataset. The training part was used in a Grid Search Cross-Validation procedure
 ## Metrics
 The model was trained using hyperparameter tuning for accuracy (0.85) as target metric. Further metrics evaluated are:
 
